@@ -19,5 +19,4 @@ Besides containing a README file with its corresponding function.
 **Would you be interested in contributing?**
 
 If you are interested in contributing in any way to any of the projects, feel free to make a fork of the repository and send a pull request or contact me through my social networks like:
-- LinkedIn :
-- Instagram: 
+- LinkedIn : https://www.linkedin.com/in/franciscovillalbaroldán/
