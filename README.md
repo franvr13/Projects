@@ -24,4 +24,4 @@ If you are interested in contributing in any way to any of the projects, feel fr
 **License**
 The projects in this repository are distributed under the MIT License.
 
-If you have any questions or need more information about any of my projects, feel free to contact me through my GitHub profile.
+*If you have any questions or need more information about any of my projects, feel free to contact me through my GitHub profile.*
