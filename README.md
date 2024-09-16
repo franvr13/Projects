@@ -20,3 +20,8 @@ Besides containing a README file with its corresponding function.
 
 If you are interested in contributing in any way to any of the projects, feel free to make a fork of the repository and send a pull request or contact me through my social networks like:
 - LinkedIn : https://www.linkedin.com/in/franciscovillalbaroldán/
+
+**License**
+The projects in this repository are distributed under the MIT License.
+
+If you have any questions or need more information about any of my projects, feel free to contact me through my GitHub profile.
