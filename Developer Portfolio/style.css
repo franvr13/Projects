@@ -434,7 +434,7 @@ span {
     height: 300px; 
     flex: 200px;
     margin: 10px;
-    border-radius: 3rem;
+    border-radius: 2rem;
     cursor: pointer;
     transition: 0.3s ease;
     overflow: hidden;
@@ -546,17 +546,20 @@ span {
     margin-top: 2rem;
 }
 
+.skills .container img {
+    width: auto; 
+    height: auto; 
+}
+
 .skills .container .row {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     gap: 2rem;
 }
 
 .skills .container .bar {
     width: 100%;
     margin: 15px 0;
-    margin-top: 15px;
-    margin-bottom: 15px;
     padding: 15px;
     border-radius: 1rem;
     background: var(--bg-color);
@@ -564,6 +567,11 @@ span {
     cursor: pointer;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    height: 200px; 
 }
 
 .skills .container .bar:hover {
@@ -581,10 +589,11 @@ span {
 }
 
 .skills .container .bar .info span {
-    font-size: 2rem;
+    font-size: 2rem; 
     font-weight: 500;
     color: var(--text-color);
     text-align: center;
+    margin: 0;
 }
 
 .skills .container .bar .info span:hover {
