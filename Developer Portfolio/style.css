@@ -342,17 +342,17 @@ span {
 
     21%,
     40% {
-        content: 'Web Developer';
+        content: 'Java Developer';
     }
 
     41%,
     60% {
-        content: 'Java Developer';
+        content: 'Web Developer';
     }
 
     61%,
     80% {
-        content: 'Back/Front End Developer';
+        content: 'Full Stack Developer';
     }
 
     81%,
@@ -431,7 +431,7 @@ span {
 
 .projects-box {
     background-color: white;
-    height: 300px;
+    height: 300px; 
     flex: 200px;
     margin: 10px;
     border-radius: 3rem;
@@ -458,8 +458,8 @@ span {
 }
 
 .projects-container img {
-    width: 200px;
-    height: auto;
+    width: 370px;
+    height: 270px;
 }
 
 .projects h1 {
