@@ -4,18 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Fran, desarrollador Java con experiencia en Spring, Hibernate y más. Conoce mis proyectos, habilidades y cómo contactarme.">
+    <title>Portfolio de Francisco Villalba Roldán</title>
     <link rel="stylesheet" href="/style.css">
-    <title>Developer Portfolio</title>
     <!-- Font Awesome Import -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
+    <!-- Header -->
     <header class="header">
-        <a href="#" class="logo">Welcome!</a>
-        <div class="menu-icon"><i class="fa-solid fa-bars menu-icon"></i></div>
+        <a href="#home" class="logo" aria-label="Welcome, Home">Welcome!</a>
+        <button class="menu-icon" aria-label="Open navigation menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#projects">Projects</a>
@@ -25,8 +29,9 @@
         </nav>
     </header>
 
+    <!-- Home Section -->
     <section class="home" id="home">
-        <img src="/image/Foto-Perfil.PNG" alt="Foto de Fran" class="home-img">
+        <img src="/image/Foto-Perfil.PNG" alt="Foto de Fran" class="home-img" loading="lazy">
         <div class="home-content">
             <h1>Hi, It's <span>Fran</span></h1>
             <h3 class="typing-text">I'm a <span></span></h3>
@@ -34,168 +39,194 @@
                 Spring, Bootstrap, Hibernate and Scrum among many others.
                 My focus is on creating robust and efficient solutions, always with an eye on innovation and code
                 quality.</p>
-
             <div class="social-icon">
-                <a href="https://www.linkedin.com/in/franciscovillalbarold%C3%A1n/" target="_blank"><i
-                        class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/franvr13" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.instagram.com/_franvr_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/franciscovillalbarold%C3%A1n/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/franvr13" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/_franvr_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
             </div>
-
         </div>
     </section>
 
+    <!-- Projects Section -->
     <section class="projects" id="projects">
         <h2 class="heading">Projects</h2>
         <div class="projects-container">
-            <a href="https://github.com/franvr13/Projects/tree/main/Calculator" class="projects-box" target="_blank">
+            <a href="https://github.com/franvr13/Projects/tree/main/Calculator" class="projects-box" target="_blank" rel="noopener noreferrer">
                 <div class="service-info">
-                    <video controls autoplay loop muted>
+                    <video controls muted preload="metadata">
                         <source src="image/Calculator.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
                     </video>
                 </div>
             </a>
-            <a href="https://github.com/franvr13/Projects/tree/main/Catalog" class="projects-box" target="_blank">
+            <a href="https://github.com/franvr13/Projects/tree/main/Catalog" class="projects-box" target="_blank" rel="noopener noreferrer">
                 <div class="service-info">
-                    <video controls autoplay loop muted>
+                    <video controls muted preload="metadata">
                         <source src="image/Catalog.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
                     </video>
                 </div>
             </a>
-            <a href="https://github.com/franvr13/Projects/tree/main/To-Do%20List" class="projects-box" target="_blank">
+            <a href="https://github.com/franvr13/Projects/tree/main/To-Do%20List" class="projects-box" target="_blank" rel="noopener noreferrer">
                 <div class="service-info">
-                    <video controls autoplay loop muted>
+                    <video controls muted preload="metadata">
                         <source src="image/To-Do List.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
                     </video>
                 </div>
             </a>
-            <a href="https://github.com/franvr13/AppSorteosFEMT" class="projects-box" target="_blank">
+            <a href="https://github.com/franvr13/AppSorteosFEMT" class="projects-box" target="_blank" rel="noopener noreferrer">
                 <div class="service-info">
-                    <img src="/image/AppSorteosFEMT.PNG" alt="AppSorteosFEMT">
+                    <img src="/image/AppSorteosFEMT.PNG" alt="App Sorteos FEMT Screenshot" loading="lazy">
                 </div>
             </a>
         </div>
     </section>
 
+    <!-- Skills Section -->
     <section class="skills" id="skills">
         <h2 class="heading">Skills</h2>
         <div class="container">
             <div class="row" id="skillsContainer">
                 <div class="bar">
                     <div class="info">
-                        <a href="https://www.oracle.com/es/" target="_blank"><img
-                                src="image/Java-removebg-preview.png" alt="Java"></a>
+                        <a href="https://www.oracle.com/es/" target="_blank" rel="noopener noreferrer" aria-label="Learn more about Java">
+                            <img src="image/Java-removebg-preview.png" alt="Java Logo - Programming Language" loading="lazy">
+                        </a>
                         <span>Java</span>
                     </div>
                 </div>
                 <div class="bar">
                     <div class="info">
-                        <a href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank"><img
-                                src="image/JavaScript-logo_1.png" alt="JavaScript"></a>
+                        <a href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer" aria-label="Learn more about JavaScript">
+                            <img src="image/JavaScript-logo_1.png" alt="JavaScript Logo - Programming Language" loading="lazy">
+                        </a>
                         <span>JavaScript</span>
                     </div>
                 </div>
                 <div class="bar">
                     <div class="info">
-                        <a href="https://getbootstrap.com/" target="_blank"><img src="image/Bootstrap_logo.svg_1.png"
-                                alt="Bootstrap"></a>
-                        <span>BootStrap</span>
+                        <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer" aria-label="Learn more about Bootstrap">
+                            <img src="image/Bootstrap_logo.svg_1.png" alt="Bootstrap Logo - Frontend Framework" loading="lazy">
+                        </a>
+                        <span>Bootstrap</span>
                     </div>
                 </div>
                 <div class="bar">
                     <div class="info">
-                        <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank"><img src="image/file-removebg-preview.png"
-                                alt="HTML"></a>
+                        <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" rel="noopener noreferrer" aria-label="Learn more about HTML">
+                            <img src="image/file-removebg-preview.png" alt="HTML Logo - Markup Language" loading="lazy">
+                        </a>
                         <span>HTML</span>
                     </div>
                 </div>
                 <div class="bar">
                     <div class="info">
-                        <a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank"><img
-                                src="image/png-clipart-blue-and-white-logo-web-development-responsive-web-design-cascading-style-sheets-html-css-blue-angle-thumbnail-removebg-preview.png"
-                                alt="CSS"></a>
+                        <a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank" rel="noopener noreferrer" aria-label="Learn more about CSS">
+                            <img src="image/png-clipart-blue-and-white-logo-web-development-responsive-web-design-cascading-style-sheets-html-css-blue-angle-thumbnail-removebg-preview.png" alt="CSS Logo - Style Sheet Language" loading="lazy">
+                        </a>
                         <span>CSS</span>
                     </div>
                 </div>
                 <div class="bar">
                     <div class="info">
-                        <a href="https://www.atlassian.com/es/software/jira" target="_blank"><img
-                                src="image/images-removebg-preview_2.png" alt="Jira"></a>
+                        <a href="https://www.atlassian.com/es/software/jira" target="_blank" rel="noopener noreferrer" aria-label="Learn more about Jira">
+                            <img src="image/images-removebg-preview_2.png" alt="Jira Logo - Project Management Tool" loading="lazy">
+                        </a>
                         <span>Jira</span>
                     </div>
                 </div>
                 <div class="bar">
                     <div class="info">
-                        <a href="https://www.atlassian.com/es/agile/scrum" target="_blank"><img src="image/Group_1.png"
-                                alt="Scrum"></a>
+                        <a href="https://www.atlassian.com/es/agile/scrum" target="_blank" rel="noopener noreferrer" aria-label="Learn more about Scrum">
+                            <img src="image/Group_1.png" alt="Scrum Logo - Agile Framework" loading="lazy">
+                        </a>
                         <span>Scrum</span>
                     </div>
                 </div>
                 <div class="bar">
                     <div class="info">
-                        <a href="https://maven.apache.org/what-is-maven.html" target="_blank"><img
-                                src="image/png-clipart-apache-maven-feathers-tech-companies-removebg-preview_1.png"
-                                alt="Maven"></a>
+                        <a href="https://maven.apache.org/what-is-maven.html" target="_blank" rel="noopener noreferrer" aria-label="Learn more about Maven">
+                            <img src="image/png-clipart-apache-maven-feathers-tech-companies-removebg-preview_1.png" alt="Maven Logo - Build Automation Tool" loading="lazy">
+                        </a>
                         <span>Maven</span>
                     </div>
                 </div>
                 <div class="bar">
                     <div class="info">
-                        <a href="https://es.wikipedia.org/wiki/Base_de_datos" target="_blank"><img
-                                src="image/603156_1.png" alt="Base de datos"></a>
+                        <a href="https://es.wikipedia.org/wiki/Base_de_datos" target="_blank" rel="noopener noreferrer" aria-label="Learn more about Databases">
+                            <img src="image/603156_1.png" alt="Database Icon" loading="lazy">
+                        </a>
                         <span>BBDD</span>
                     </div>
                 </div>
                 <div class="bar">
                     <div class="info">
-                        <a href="https://www.mysql.com/" target="_blank"><img
-                                src="image/png-clipart-microsoft-sql-server-microsoft-azure-sql-database-microsoft-text-logo-thumbnail-removebg-preview_1_1.png"
-                                alt="MySQL"></a>
+                        <a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer" aria-label="Learn more about MySQL">
+                            <img src="image/png-clipart-microsoft-sql-server-microsoft-azure-sql-database-microsoft-text-logo-thumbnail-removebg-preview_1_1.png" alt="MySQL Logo - Database Management System" loading="lazy">
+                        </a>
                         <span>SQL</span>
                     </div>
                 </div>
                 <div class="bar">
                     <div class="info">
-                        <a href="https://hibernate.org/" target="_blank"><img src="image/Group_2.png" alt="Hibernate"></a>
+                        <a href="https://hibernate.org/" target="_blank" rel="noopener noreferrer" aria-label="Learn more about Hibernate">
+                            <img src="image/Group_2.png" alt="Hibernate Logo - ORM Framework" loading="lazy">
+                        </a>
                         <span>Hibernate</span>
                     </div>
                 </div>
                 <div class="bar">
                     <div class="info">
-                        <a href="https://spring.io/" target="_blank"><img src="image/Group_3.png" alt="Spring"></a>
+                        <a href="https://spring.io/" target="_blank" rel="noopener noreferrer" aria-label="Learn more about Spring">
+                            <img src="image/Group_3.png" alt="Spring Logo - Application Framework" loading="lazy">
+                        </a>
                         <span>Spring</span>
                     </div>
                 </div>
                 <div class="bar">
                     <div class="info">
-                        <a href="https://spring.io/projects/spring-boot" target="_blank"><img src="image/spring-boot-ok_1.png"
-                                alt="Spring Boot"></a>
+                        <a href="https://spring.io/projects/spring-boot" target="_blank" rel="noopener noreferrer" aria-label="Learn more about Spring Boot">
+                            <img src="image/spring-boot-ok_1.png" alt="Spring Boot Logo - Application Framework" loading="lazy">
+                        </a>
                         <span>Spring Boot</span>
                     </div>
                 </div>
                 <div class="bar">
                     <div class="info">
-                        <a href="https://www.docker.com/" target="_blank"><img src="image/97_Docker_logo_logos-512_1.png"
-                                alt="Docker"></a>
+                        <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer" aria-label="Learn more about Docker">
+                            <img src="image/97_Docker_logo_logos-512_1.png" alt="Docker Logo - Containerization Tool" loading="lazy">
+                        </a>
                         <span>Docker</span>
                     </div>
                 </div>
                 <div class="bar">
                     <div class="info">
-                        <a href="https://git-scm.com/" target="_blank"><img src="image/Git.png" alt="Git"></a>
+                        <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer" aria-label="Learn more about Git">
+                            <img src="image/Git.png" alt="Git Logo - Version Control System" loading="lazy">
+                        </a>
                         <span>Git</span>
                     </div>
                 </div>
                 <div class="bar">
                     <div class="info">
-                        <a href="https://github.com/" target="_blank"><img src="image/Github.png" alt="Github"></a>
+                        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="Learn more about GitHub">
+                            <img src="image/Github.png" alt="GitHub Logo - Code Hosting Platform" loading="lazy">
+                        </a>
                         <span>GitHub</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+    
+    <!-- Education Section -->
     <section class="education" id="education">
         <h2 class="heading">My <span>Education</span></h2>
         <div class="timeline">
@@ -206,13 +237,10 @@
                     </div>
                     <div class="desc">
                         <p>The Java Master offers the knowledge and skills necessary to train as a developer of desktop
-                            and web applications using Java,
-                            in a context of digital transformation. The syllabus covers from fundamentals to advanced
-                            Java,
-                            including database connection and web development with technologies such as Servlets, JSP,
+                            and web applications using Java, in a context of digital transformation. The syllabus covers from fundamentals to advanced
+                            Java, including database connection and web development with technologies such as Servlets, JSP,
                             HTML, CSS, JavaScript (including HTML5 and CSS3).
-                            The course prepares students to obtain certifications in Java and apply what they have
-                            learned in real projects.</p>
+                            The course prepares students to obtain certifications in Java and apply what they have learned in real projects.</p>
                     </div>
                 </div>
             </div>
@@ -223,12 +251,9 @@
                     </div>
                     <div class="desc">
                         <p>Interior Design training provides the skills necessary to create functional and aesthetically
-                            appealing spaces.
-                            It covers key areas such as the use of color, lighting, furnishings, space layout and
-                            material selection,
-                            all with a focus on client needs and sustainability. Students develop proficiency in
-                            residential, commercial and public interior planning,
-                            learning to combine creativity with technical principles to design environments that enhance
+                            appealing spaces. It covers key areas such as the use of color, lighting, furnishings, space layout and
+                            material selection, all with a focus on client needs and sustainability. Students develop proficiency in
+                            residential, commercial and public interior planning, learning to combine creativity with technical principles to design environments that enhance
                             the quality of life.</p>
                     </div>
                 </div>
@@ -236,34 +261,40 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section class="contact" id="contact">
         <h1 class="heading">Contact <span>Me</span></h1>
         <form action="https://formspree.io/f/mrbgldjw" method="POST" target="_blank">
             <div class="input-box">
                 <input type="text" name="name" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <input type="number" name="number" placeholder="Number">
-                <input type="text" placeholder="Subject">
+                <input type="email" name="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                <input type="tel" name="number" placeholder="Number" pattern="\+?[0-9\s\-]+">
+                <input type="text" name="subject" placeholder="Subject">
             </div>
-            <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
             <input type="submit" value="Send Message" class="btn">
         </form>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="social">
-            <a href="https://www.linkedin.com/in/franciscovillalbarold%C3%A1n/" target="_blank"><i
-                    class="fa-brands fa-linkedin" target="_blank"></i></a>
-            <a href="https://github.com/franvr13" target="_blank"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.instagram.com/_franvr_/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/franciscovillalbarold%C3%A1n/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/franvr13" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.instagram.com/_franvr_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
         </div>
         <p class="copyright">
-            &copy Francisco Villalba Roldán | All Right Reserved
+            &copy; Francisco Villalba Roldán | All Rights Reserved
         </p>
     </footer>
 
-    <script src="/script.js"></script>
-
+    <script src="/script.js" defer></script>
 </body>
 
 </html>

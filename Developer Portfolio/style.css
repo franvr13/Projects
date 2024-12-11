@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 * {
     margin: 0;
@@ -25,7 +25,6 @@ html {
 
 body {
     background: var(--bg-color);
-    font-family: "Poppins", sans-serif;
     color: var(--text-color);
 }
 
@@ -56,7 +55,6 @@ html::-webkit-scrollbar-thumb {
 }
 
 @media (max-width: 600px) {
-
     html {
         font-size: 50%;
     }
@@ -77,14 +75,8 @@ html::-webkit-scrollbar-thumb {
         width: 100%;
     }
 
-    .home-img img {
-        width: 100%;
-    }
-
-    .education .container {
-        width: 100%;
-        padding-left: 1rem;
-        padding-right: 1rem;
+    .home-content h3 {
+        font-size: 2.5rem;
     }
 }
 
@@ -100,23 +92,12 @@ html::-webkit-scrollbar-thumb {
     }
 }
 
-@media (max-width: 500px) {
-    .home .home-content h1 {
-        font-size: 3rem;
-    }
-
-    .navbar a {
-        font-size: 1.2rem;
-    }
-}
-
 .logo {
     font-size: 2.5rem;
     color: var(--main-color);
     font-weight: 800;
     cursor: pointer;
-    transition: 0.5s ease;
-    cursor: pointer;
+    transition: transform 0.5s ease;
 }
 
 .logo:hover {
@@ -128,7 +109,7 @@ html::-webkit-scrollbar-thumb {
     color: var(--text-color);
     margin-left: 2.5rem;
     font-weight: 500;
-    transition: 0.3s ease;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
     border-bottom: 3px solid transparent;
 }
 
@@ -141,10 +122,11 @@ html::-webkit-scrollbar-thumb {
 .menu-icon {
     font-size: 3.6rem;
     color: var(--main-color);
+    background-color: var(--bg-color);
     display: none;
 }
 
-@media (max-width:995px) {
+@media (max-width: 995px) {
     .menu-icon {
         display: block;
     }
@@ -159,7 +141,6 @@ html::-webkit-scrollbar-thumb {
         border-bottom-left-radius: 2rem;
         padding: 1rem 3%;
         background-color: var(--second-bg-color);
-        border-top: 0.1rem solid rgba(0, 0, 0, 0.4);
         display: none;
     }
 
@@ -197,7 +178,7 @@ section {
 .home .home-content h1 {
     font-size: 5rem;
     font-weight: 700;
-    line-height: 1.3;
+    line-height: 1 .3;
 }
 
 span {
@@ -233,24 +214,6 @@ span {
     box-shadow: 0 0 25px rgba(123, 75, 183, 0.7);
 }
 
-@media (max-width: 600px) {
-    .home-img {
-        box-shadow: 0 0 15px rgba(123, 75, 183, 0.5);
-    }
-}
-
-@media (min-width: 601px) and (max-width: 1200px) {
-    .home-img {
-        box-shadow: 0 0 20px rgba(123, 75, 183, 0.5);
-    }
-}
-
-@media (min-width: 1201px) {
-    .home-img {
-        box-shadow: 0 0 25px rgba(123, 75, 183, 0.5);
-    }
-}
-
 .home-content p {
     font-size: 1.8rem;
     font-weight: 500;
@@ -268,7 +231,7 @@ span {
     border-radius: 50%;
     color: var(--main-color);
     margin: 3rem 1.5rem 3rem 0;
-    transition: 0.4s ease;
+    transition: transform 0.4s ease;
 }
 
 .social-icon a:hover {
@@ -288,7 +251,7 @@ span {
     border: 2px solid var(--main-color);
     letter-spacing: 0.1rem;
     font-weight: 600;
-    transition: 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
     cursor: pointer;
 }
 
@@ -334,68 +297,25 @@ span {
 }
 
 @keyframes words {
-
-    0%,
-    20% {
-        content: 'Junior Developer';
-    }
-
-    21%,
-    40% {
-        content: 'Java Developer';
-    }
-
-    41%,
-    60% {
-        content: 'Web Developer';
-    }
-
-    61%,
-    80% {
-        content: 'Full Stack Developer';
-    }
-
-    81%,
-    100% {
-        content: 'Graphic Designer';
-    }
+    0%, 20% { content: 'Junior Developer'; }
+    21%, 40% { content: 'Java Developer'; }
+    41%, 60% { content: 'Web Developer'; }
+    61%, 80% { content: 'Full Stack Developer'; }
+    81%, 100% { content: 'Graphic Designer'; }
 }
 
 @keyframes typing {
-
-    10%,
-    15%,
-    30%,
-    35%,
-    50%,
-    55%,
-    70%,
-    75%,
-    90%,
-    95% {
-        width: 0;
-    }
-
-    5%,
-    20%,
-    25%,
-    40%,
-    45%,
-    60%,
-    65%,
-    80%,
-    85% {
-        width: calc(100% + 8px);
-    }
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% { width: 0; }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% { width: calc(100% + 8px); }
 }
 
-@media (max-width:1000px) {
+@media (max-width: 1000px) {
     .home {
         gap: 4rem;
     }
 }
 
-@media (max-width:995px) {
+@media (max-width: 995px) {
     .home {
         flex-direction: column;
         margin: 5rem 4rem;
@@ -415,10 +335,10 @@ span {
     }
 }
 
-/* projects Section */
+/* Projects Section */
 
 .projects {
-    background: var(--second-bg-color);
+    background: var(--second-bg-color );
 }
 
 .projects-container {
@@ -436,7 +356,7 @@ span {
     margin: 10px;
     border-radius: 2rem;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: transform 0.3s ease;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -498,7 +418,7 @@ span {
     border-radius: 10px;
 }
 
-@media (max-width:991px) {
+@media (max-width: 991px) {
     section {
         padding: 10rem 3% 2rem;
     }
@@ -508,7 +428,7 @@ span {
     }
 }
 
-@media (max-width:895px) {
+@media (max-width: 895px) {
     .projects h2 {
         margin-bottom: 3rem;
     }
@@ -563,7 +483,7 @@ span {
     padding: 15px;
     border-radius: 1rem;
     background: var(--bg-color);
-    transition: 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -601,7 +521,7 @@ span {
     transition: color 0.4s ease;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width:  1200px) {
     .skills .container {
         max-width: 90%;
     }
@@ -771,7 +691,7 @@ span {
 }
 
 .education .content .tag h2 {
-    font-size: 1.5rem;
+    font-size: 1.5 rem;
     font-weight: 600;
 }
 
@@ -871,7 +791,7 @@ span {
     padding: 1rem 2rem;
     margin-top: 30px;
     background-color: var(--text-color);
-    color: var(--bg-color);
+    color: var(--main-color);
     border: none;
     border-radius: 0.8rem;
     font-size: 1.6rem;
@@ -879,12 +799,12 @@ span {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-btn:hover {
+.contact form .btn:hover {
     background-color: darken(var(--second-bg-color), 10%);
     transform: scale(1.05);
 }
 
-btn:focus {
+.contact form .btn:focus {
     outline: none;
     box-shadow: 0 0 5px var(--text-color);
 }
@@ -916,7 +836,7 @@ btn:focus {
     text-align: center;
     border-radius: 50%;
     margin: 0 10px;
-    transition: 0.4s ease;
+    transition: transform 0.4s ease;
 }
 
 .footer .social a:hover {
@@ -932,7 +852,7 @@ btn:focus {
     color: black;
 }
 
-@media (max-width:1285px) {
+@media (max-width: 1285px) {
     html {
         font-size: 55%;
     }
@@ -943,7 +863,7 @@ btn:focus {
     }
 }
 
-@media (max-width:991px) {
+@media (max-width: 991px) {
     .header {
         padding: 1.5rem 2%;
     }
@@ -957,7 +877,7 @@ btn:focus {
     }
 
     .projects-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat (2, 1fr);
     }
 
     .footer {
@@ -965,12 +885,104 @@ btn:focus {
     }
 }
 
-@media (max-width:895px) {
+@media (max-width: 895px) {
     .projects h2 {
         margin-bottom: 3rem;
     }
 
     .projects-container {
         grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 50%;
+    }
+
+    .header {
+        padding: 1rem 2%;
+    }
+
+    .navbar a {
+        font-size: 1.4rem;
+    }
+
+    .home .home-content h1 {
+        font-size: 3rem;
+    }
+
+    .home-img {
+        width: 100%;
+    }
+
+    .home-content h3 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 1.5rem 3%;
+    }
+
+    .navbar a {
+        font-size: 1.6rem;
+    }
+
+    .home .home-content h1 {
+        font-size: 4rem;
+    }
+
+    .home-img {
+        width: 80%;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    .header {
+        padding: 2rem 5%;
+    }
+
+    .navbar a {
+        font-size: 1.8rem;
+    }
+
+    .home .home-content h1 {
+        font-size: 5rem;
+    }
+
+    .home-img {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1201px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    .header {
+        padding: 2rem 5%;
+    }
+
+    .navbar a {
+        font-size: 1.8rem;
+    }
+
+    .home .home-content h1 {
+        font-size: 6rem;
+    }
+
+    .home-img {
+        width: 60%;
     }
 }
