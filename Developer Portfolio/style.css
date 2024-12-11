@@ -378,8 +378,10 @@ span {
 }
 
 .projects-container img {
-    width: 370px;
-    height: 270px;
+    width: 100%;          
+    height: auto;         
+    max-width: 370px;     
+    max-height: 270px;     
 }
 
 .projects h1 {
