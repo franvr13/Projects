@@ -1,3 +1,5 @@
+console.log('Archivo script.js cargado correctamente');
+
 document.addEventListener('DOMContentLoaded', () => {
     const menuIcon = document.querySelector('.menu-icon');
     const navbar = document.querySelector('.navbar');
@@ -64,4 +66,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     typeEffect(); // Inicia el efecto de escritura
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Elementos del aviso de cookies
+    const cookieConsent = document.getElementById('cookieConsent');
+    const acceptCookies = document.getElementById('acceptCookies');
+    const rejectCookies = document.getElementById('rejectCookies');
+
+    // Función para establecer cookies
+    function setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        document.cookie = `${name}=${value};expires=${date.toUTCString()};path=/`;
+    }
+
+    // Función para obtener una cookie
+    function getCookie(name) {
+        const cookies = document.cookie.split(';');
+        for (let cookie of cookies) {
+            const [key, value] = cookie.trim().split('=');
+            if (key === name) {
+                return value;
+            }
+        }
+        return null;
+    }
+
+    // Mostrar el aviso de cookies si no hay preferencia guardada
+    if (!getCookie('cookiesAccepted')) {
+        cookieConsent.style.display = 'block';
+    }
+
+    // Eventos para aceptar o rechazar cookies
+    acceptCookies.addEventListener('click', () => {
+        setCookie('cookiesAccepted', 'true', 365);
+        cookieConsent.style.display = 'none';
+    });
+
+    rejectCookies.addEventListener('click', () => {
+        setCookie('cookiesAccepted', 'false', 365);
+        cookieConsent.style.display = 'none';
+    });
 });
