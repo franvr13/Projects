@@ -54,8 +54,13 @@ html::-webkit-scrollbar-thumb {
     z-index: 1000;
 }
 
+.cookie-consent p {
+    margin-bottom: 10px; 
+}
+
 .cookie-consent .btn {
     margin-left: 10px;
+    margin: 0 5px; 
     background: var(--main-color);
     color: var(--text-color);
     border: none;
