@@ -13,6 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
         navbar?.classList.toggle('active');
     });
 
+    // Funcionalidad para el icono de cambio de idioma
+    document.getElementById('language-toggle').addEventListener('click', function() { 
+        // Oculta el menú en versión móvil
+        const navbar = document.querySelector('.navbar');
+        navbar.classList.toggle('hidden'); // Alterna la clase 'hidden' para mostrar/ocultar el menú
+    });
+
     // Agrega evento a los enlaces del nav para activar/desactivar la clase 'active'
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
