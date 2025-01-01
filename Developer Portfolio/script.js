@@ -14,11 +14,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Funcionalidad para el icono de cambio de idioma
-    document.getElementById('language-toggle').addEventListener('click', function() { 
-        // Oculta el menú en versión móvil
-        const navbar = document.querySelector('.navbar');
-        navbar.classList.toggle('hidden'); // Alterna la clase 'hidden' para mostrar/ocultar el menú
-    });
+document.getElementById('language-toggle').addEventListener('click', function() { 
+    var language = document.getElementById('language-toggle').getAttribute('data-language');
+    if (language === 'es') {
+        document.getElementById('language-toggle').setAttribute('data-language', 'en');
+        document.getElementById('language-toggle').innerHTML = 'English';
+        document.body.classList.remove('es');
+        document.body.classList.add('en');
+        } else {
+            document.getElementById('language-toggle').setAttribute('data-language', 'es');
+            document.getElementById('language-toggle').innerHTML = 'Español';
+            document.body.classList.remove('en');
+            document.body.classList.add('es');
+            }
+            });
 
     // Agrega evento a los enlaces del nav para activar/desactivar la clase 'active'
     navLinks.forEach(link => {
