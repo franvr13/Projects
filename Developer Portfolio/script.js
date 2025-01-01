@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
     const video = document.querySelector('video');
     const typingElement = document.getElementById("typing-effect");
-    const text = "Coming soon...";
 
     // Funcionalidad para el icono del menú
     menuIcon?.addEventListener('click', () => {
@@ -109,3 +108,44 @@ document.addEventListener('DOMContentLoaded', () => {
         cookieConsent.style.display = 'none';
     });
 });
+
+let currentLang = 'en';
+const translations = {
+    en: {}, // Cargar desde en.json
+    es: {}  // Cargar desde es.json
+};
+
+// Cargar traducciones al inicio
+fetch('en.json')
+    .then(response => response.json())
+    .then(data => translations.en = data);
+
+fetch('es.json')
+    .then(response => response.json())
+    .then(data => translations.es = data);
+
+document.getElementById('language-toggle').addEventListener('click', () => {
+    currentLang = currentLang === 'en' ? 'es' : 'en';
+    updateLanguage();
+});
+
+// Update all text based on the selected language
+function updateLanguage() {
+    document.querySelectorAll('[data-translate]').forEach(el => {
+        const key = el.getAttribute('data-translate');
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            if (el.type === 'submit') {
+                el.value = translations[currentLang][key] || el.value;
+            } else if (el.tagName === 'TEXTAREA') {
+                el.textContent = translations[currentLang][key] || el.textContent;
+            } else {
+                el.placeholder = translations[currentLang][key] || el.placeholder;
+            }
+        } else {
+            el.textContent = translations[currentLang][key] || el.textContent;
+        }
+    });
+}
+
+// Initial language update
+window.addEventListener('load', updateLanguage);

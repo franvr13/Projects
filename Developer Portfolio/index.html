@@ -4,29 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de Fran, desarrollador Java con experiencia en Spring, Hibernate y más. Conoce mis proyectos, habilidades y cómo contactarme.">
-    <title>Portfolio de Francisco Villalba Roldán</title>
+    <meta name="description" content="Bienvenido a mi Portfolio, soy desarrollador Java con experiencia en Spring, Hibernate y más. Conoce mis proyectos, habilidades y cómo contactarme.">
+    <title data-translate="title">Portfolio de Francisco Villalba Roldán</title>
     <link rel="stylesheet" href="/style.css">
     <!-- Font Awesome Import -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 
 <body>
 
     <!-- Header -->
     <header class="header">
-        <a href="#home" class="logo" aria-label="Welcome, Home">Welcome!</a>
+        <a href="#home" data-translate="welcome" class="logo" aria-label="Welcome, Home">Welcome!</a>
         <button class="menu-icon" aria-label="Open navigation menu">
             <i class="fa-solid fa-bars"></i>
         </button>
         <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
+            <button id="language-toggle" class="btn">EN/ES</button>
+            <a href="#home" data-translate="home" class="active">Home</a>
+            <a href="#projects" data-translate="projects">Projects</a>
+            <a href="#skills" data-translate="skills">Skills</a>
+            <a href="#education" data-translate="education">Education</a>
+            <a href="#contact" data-translate="contact">Contact</a>
         </nav>
     </header>
 
@@ -36,9 +37,8 @@
         <div class="home-content">
             <h1>Hi, It's <span>Fran</span></h1>
             <h3 class="typing-text">I'm a <span></span></h3>
-            <p>Currently, I am a Java developer with a strong background in key technologies and methodologies such as
-                Spring, Bootstrap, Hibernate and Scrum among many others.
-                My focus is on creating robust and efficient solutions, always with an eye on innovation and code
+            <p data-translate="description">Currently, I am a Java developer with a strong background in key technologies and methodologies such as
+                Spring, Bootstrap, Hibernate and Scrum among many others. My focus is on creating robust and efficient solutions, always with an eye on innovation and code
                 quality.</p>
             <div class="social-icon">
                 <a href="https://www.linkedin.com/in/franciscovillalbarold%C3%A1n/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
@@ -56,7 +56,7 @@
 
 <!-- Projects Section -->
 <section class="projects" id="projects">
-    <h2 class="heading">Projects</h2>
+    <h2 class="heading" data-translate="projects">Projects</h2>
     <div class="projects-container">
         <a href="https://github.com/franvr13/ChicCloset" class="projects-box" target="_blank" rel="noopener noreferrer">
             <div class="service-info">
@@ -100,7 +100,7 @@
 
     <!-- Skills Section -->
     <section class="skills" id="skills">
-        <h2 class="heading">Skills</h2>
+        <h2 class="heading" data-translate="skills">Skills</h2>
         <div class="container">
             <div class="row" id="skillsContainer">
                 <div class="bar">
@@ -237,15 +237,15 @@
     
     <!-- Education Section -->
     <section class="education" id="education">
-        <h2 class="heading">My <span>Education</span></h2>
+        <h2 class="heading" data-translate="myEducation">My Education</h2>
         <div class="timeline">
-            <div class="container right">
+            <div class="container right" onclick="window.location.href='https://www.linkedin.com/posts/franciscovillalbarold%C3%A1n_diploma-programador-java-activity-7272308626667560960-NTPh?utm_source=share&utm_medium=member_desktop';" style="cursor: pointer;">
                 <div class="content">
                     <div class="tag">
-                        <h3>Master Java Web/App Developing</h3>
+                        <h3 data-translate="education1">Master Java Web/App Developing</h3>
                     </div>
                     <div class="desc">
-                        <p>The Java Master offers the knowledge and skills necessary to train as a developer of desktop
+                        <p data-translate="description1">The Java Master offers the knowledge and skills necessary to train as a developer of desktop
                             and web applications using Java, in a context of digital transformation. The syllabus covers from fundamentals to advanced
                             Java, including database connection and web development with technologies such as Servlets, JSP,
                             HTML, CSS, JavaScript (including HTML5 and CSS3).
@@ -256,10 +256,10 @@
             <div class="container left">
                 <div class="content">
                     <div class="tag">
-                        <h3>Interior Design</h3>
+                        <h3 data-translate="education2">Interior Design</h3>
                     </div>
                     <div class="desc">
-                        <p>Interior Design training provides the skills necessary to create functional and aesthetically
+                        <p data-translate="description2">Interior Design training provides the skills necessary to create functional and aesthetically
                             appealing spaces. It covers key areas such as the use of color, lighting, furnishings, space layout and
                             material selection, all with a focus on client needs and sustainability. Students develop proficiency in
                             residential, commercial and public interior planning, learning to combine creativity with technical principles to design environments that enhance
@@ -272,16 +272,16 @@
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
-        <h1 class="heading">Contact <span>Me</span></h1>
+        <h1 class="heading" data-translate="contactMe">Contact Me</h1>
         <form action="https://formspree.io/f/mrbgldjw" method="POST" target="_blank">
             <div class="input-box">
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="email" name="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-                <input type="tel" name="number" placeholder="Number" pattern="\+?[0-9\s\-]+">
-                <input type="text" name="subject" placeholder="Subject">
+                <input type="text" name="name" placeholder="Name" data-translate="namePlaceholder" required>
+                <input type="email" name="email" placeholder="Email" data-translate="emailPlaceholder" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                <input type="tel" name="number" placeholder="Number" data-translate="numberPlaceholder" pattern="\+?[0-9\s\-]+">
+                <input type="text" name="subject" placeholder="Subject" data-translate="subjectPlaceholder" required>
             </div>
-            <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
-            <input type="submit" value="Send Message" class="btn">
+            <textarea name="message" cols="30" rows="10" data-translate="messagePlaceholder" required></textarea>
+            <input type="submit" value="Send Message" class="btn" data-translate="sendMessage">
         </form>
     </section>
 
@@ -298,8 +298,8 @@
                 <i class="fa-brands fa-instagram"></i>
             </a>
         </div>
-        <p class="copyright">
-            &copy; Francisco Villalba Roldán | All Rights Reserved
+        <p class="copyright" data-translate="copyright">
+            © Francisco Villalba Roldán | All Rights Reserved.
         </p>
     </footer>
 
@@ -307,9 +307,9 @@
 
     <!-- Cookies -->
     <div id="cookieConsent" class="cookie-consent">
-        <p>We use cookies to improve your experience. Do you accept the use of cookies?</p>
-        <button id="acceptCookies" class="btn">Accept</button>
-        <button id="rejectCookies" class="btn">Reject</button>
+        <p data-translate="cookies">We use cookies to improve your experience. Do you accept the use of cookies?</p>
+        <button id="acceptCookies" class="btn" data-translate="accept">Accept</button>
+        <button id="rejectCookies" class="btn" data-translate="reject">Reject</button>
     </div>
 
 </body>
