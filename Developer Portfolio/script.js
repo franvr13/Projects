@@ -27,7 +27,13 @@ document.getElementById('language-toggle').addEventListener('click', function() 
             document.body.classList.remove('en');
             document.body.classList.add('es');
             }
-            });
+});
+
+// Añade un evento de clic al botón de cambio de idioma
+languageToggle.addEventListener('click', () => {
+    // Cierra el menú de navegación
+    navbar.classList.remove('active'); // Asegúrate de que 'active' sea la clase que controla la visibilidad del menú
+});
 
     // Agrega evento a los enlaces del nav para activar/desactivar la clase 'active'
     navLinks.forEach(link => {
