@@ -1,75 +1,58 @@
-console.log('Archivo script.js cargado correctamente');
-
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('Archivo script.js cargado correctamente');
+
+    // Selección de elementos
     const menuIcon = document.querySelector('.menu-icon');
     const navbar = document.querySelector('.navbar');
     const navLinks = document.querySelectorAll('.navbar a');
     const sections = document.querySelectorAll('section');
     const video = document.querySelector('video');
     const typingElement = document.getElementById("typing-effect");
+    const languageToggle = document.getElementById('language-toggle');
+    const cookieConsent = document.getElementById('cookieConsent');
+    const acceptCookies = document.getElementById('acceptCookies');
+    const rejectCookies = document.getElementById('rejectCookies');
 
-    // Funcionalidad para el icono del menú
-    menuIcon?.addEventListener('click', () => {
-        navbar?.classList.toggle('active');
-    });
-
-    // Funcionalidad para el icono de cambio de idioma
-document.getElementById('language-toggle').addEventListener('click', function() { 
-    var language = document.getElementById('language-toggle').getAttribute('data-language');
-    if (language === 'es') {
-        document.getElementById('language-toggle').setAttribute('data-language', 'en');
-        document.getElementById('language-toggle').innerHTML = 'English';
-        document.body.classList.remove('es');
-        document.body.classList.add('en');
-        } else {
-            document.getElementById('language-toggle').setAttribute('data-language', 'es');
-            document.getElementById('language-toggle').innerHTML = 'Español';
-            document.body.classList.remove('en');
-            document.body.classList.add('es');
-            }
-});
-
-// Añade un evento de clic al botón de cambio de idioma
-languageToggle.addEventListener('click', () => {
-    // Cierra el menú de navegación
-    navbar.classList.remove('active'); // Asegúrate de que 'active' sea la clase que controla la visibilidad del menú
-});
-
-    // Agrega evento a los enlaces del nav para activar/desactivar la clase 'active'
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            // Elimina la clase 'active' de todos los enlaces y oculta el menú
-            navLinks.forEach(nav => nav.classList.remove('active'));
-            link.classList.add('active');
-            navbar?.classList.remove('active'); // Ocultar el menú en dispositivos móviles
-        });
-    });
-
-    // Función para manejar el cambio de clase 'active' en la navbar según el scroll
-    function changeActiveLink() {
-        const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-
-            // Verifica si la sección está visible en el viewport
-            if (scrollPosition >= sectionTop - sectionHeight / 3 &&
-                scrollPosition < sectionTop + sectionHeight - sectionHeight / 3) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${section.id}`) {
-                        link.classList.add('active');
-                    }
-                });
-            }
+    // Funcionalidad: Icono de menú
+    if (menuIcon && navbar) {
+        menuIcon.addEventListener('click', () => {
+            navbar.classList.toggle('active');
         });
     }
 
-    // Añade el evento de scroll
-    window.addEventListener('scroll', changeActiveLink);
+    // Funcionalidad: Enlaces del navbar
+    if (navLinks.length > 0) {
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.forEach(nav => nav.classList.remove('active'));
+                link.classList.add('active');
+                navbar?.classList.remove('active'); // Ocultar el menú
+            });
+        });
+    }
 
-    // Reproduce automáticamente el vídeo si está presente
+    // Funcionalidad: Scroll y cambio de enlaces activos
+    if (sections.length > 0) {
+        const changeActiveLink = () => {
+            const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollPosition >= sectionTop - sectionHeight / 3 &&
+                    scrollPosition < sectionTop + sectionHeight - sectionHeight / 3) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${section.id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        };
+        window.addEventListener('scroll', changeActiveLink);
+    }
+
+    // Funcionalidad: Reproducir video
     if (video) {
         video.addEventListener('loadeddata', () => {
             video.play().catch(error => {
@@ -78,96 +61,92 @@ languageToggle.addEventListener('click', () => {
         });
     }
 
-    // Efecto de escritura en el elemento con ID 'typing-effect'
-    function typeEffect() {
-        if (typingElement) {
-            typingElement.textContent = text;
-            typingElement.classList.add("typing"); // Añade la clase para iniciar la animación
-        }
+    // Funcionalidad: Efecto de escritura
+    if (typingElement) {
+        const text = "Tu mensaje aquí...";
+        let index = 0;
+        const typingInterval = setInterval(() => {
+            typingElement.textContent += text.charAt(index);
+            index++;
+            if (index >= text.length) clearInterval(typingInterval);
+        }, 100);
     }
 
-    typeEffect(); // Inicia el efecto de escritura
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Elementos del aviso de cookies
-    const cookieConsent = document.getElementById('cookieConsent');
-    const acceptCookies = document.getElementById('acceptCookies');
-    const rejectCookies = document.getElementById('rejectCookies');
-
-    // Función para establecer cookies
-    function setCookie(name, value, days) {
+    // Funcionalidad: Manejo de cookies
+    const setCookie = (name, value, days) => {
         const date = new Date();
         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
         document.cookie = `${name}=${value};expires=${date.toUTCString()};path=/`;
-    }
+    };
 
-    // Función para obtener una cookie
-    function getCookie(name) {
+    const getCookie = (name) => {
         const cookies = document.cookie.split(';');
         for (let cookie of cookies) {
             const [key, value] = cookie.trim().split('=');
-            if (key === name) {
-                return value;
-            }
+            if (key === name) return value;
         }
         return null;
-    }
+    };
 
-    // Mostrar el aviso de cookies si no hay preferencia guardada
-    if (!getCookie('cookiesAccepted')) {
-        cookieConsent.style.display = 'block';
-    }
-
-    // Eventos para aceptar o rechazar cookies
-    acceptCookies.addEventListener('click', () => {
-        setCookie('cookiesAccepted', 'true', 365);
-        cookieConsent.style.display = 'none';
-    });
-
-    rejectCookies.addEventListener('click', () => {
-        setCookie('cookiesAccepted', 'false', 365);
-        cookieConsent.style.display = 'none';
-    });
-});
-
-let currentLang = 'en';
-const translations = {
-    en: {}, // Cargar desde en.json
-    es: {}  // Cargar desde es.json
-};
-
-// Cargar traducciones al inicio
-fetch('en.json')
-    .then(response => response.json())
-    .then(data => translations.en = data);
-
-fetch('es.json')
-    .then(response => response.json())
-    .then(data => translations.es = data);
-
-document.getElementById('language-toggle').addEventListener('click', () => {
-    currentLang = currentLang === 'en' ? 'es' : 'en';
-    updateLanguage();
-});
-
-// Update all text based on the selected language
-function updateLanguage() {
-    document.querySelectorAll('[data-translate]').forEach(el => {
-        const key = el.getAttribute('data-translate');
-        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-            if (el.type === 'submit') {
-                el.value = translations[currentLang][key] || el.value;
-            } else if (el.tagName === 'TEXTAREA') {
-                el.textContent = translations[currentLang][key] || el.textContent;
-            } else {
-                el.placeholder = translations[currentLang][key] || el.placeholder;
-            }
-        } else {
-            el.textContent = translations[currentLang][key] || el.textContent;
+    if (cookieConsent && acceptCookies && rejectCookies) {
+        if (!getCookie('cookiesAccepted')) {
+            cookieConsent.style.display = 'block';
         }
-    });
-}
+        acceptCookies.addEventListener('click', () => {
+            setCookie('cookiesAccepted', 'true', 365);
+            cookieConsent.style.display = 'none';
+        });
+        rejectCookies.addEventListener('click', () => {
+            setCookie('cookiesAccepted', 'false', 365);
+            cookieConsent.style.display = 'none';
+        });
+    }
 
-// Initial language update
-window.addEventListener('load', updateLanguage);
+    // Funcionalidad: Traducciones
+    const translations = { en: {}, es: {} };
+    let currentLang = 'en'; // Idioma inicial por defecto
+
+    const loadTranslations = () => {
+        return Promise.all([
+            fetch('en.json').then(res => res.json()).then(data => translations.en = data),
+            fetch('es.json').then(res => res.json()).then(data => translations.es = data)
+        ]);
+    };
+
+    const updateLanguage = (lang) => {
+        document.querySelectorAll('[data-translate]').forEach(el => {
+            const key = el.getAttribute('data-translate');
+            const translation = translations[lang]?.[key];
+            if (translation) {
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                    el.placeholder = translation;
+                } else {
+                    el.textContent = translation;
+                }
+            }
+        });
+    };
+
+    if (languageToggle) {
+        loadTranslations().then(() => {
+            // Establecer el idioma inicial
+            updateLanguage(currentLang);
+
+            // Evento de clic para cambiar el idioma
+            languageToggle.addEventListener('click', () => {
+                currentLang = currentLang === 'en' ? 'es' : 'en'; // Alternar idioma
+
+                // Actualizar atributos y estilos
+                languageToggle.setAttribute('data-language', currentLang);
+                languageToggle.textContent = currentLang === 'es' ? 'Español' : 'English';
+                document.body.classList.toggle('es', currentLang === 'es');
+                document.body.classList.toggle('en', currentLang === 'en');
+
+                // Actualizar traducciones
+                updateLanguage(currentLang);
+            });
+        }).catch(error => {
+            console.error('Error al cargar las traducciones:', error);
+        });
+    }
+});
