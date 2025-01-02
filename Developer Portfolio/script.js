@@ -150,27 +150,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
-// Diccionario de traducciones
-const translations = {
-    en: {
-        sendMessage: "Send Message"
-    },
-    es: {
-        sendMessage: "Enviar Mensaje"
-    }
-};
-
- // Función para traducir el botón
-function languagetoggle(lang) {
-    const button = document.querySelector('[data-translate="sendMessage"]');
-    if (translations[lang] && translations[lang]["sendMessage"]) {
-        button.value = translations[lang]["sendMessage"];
-    }
-}
-
-// Evento para el botón de traducción
-document.getElementById('languagetoggle').addEventListener('click', function() {
-    // Cambia el idioma al español (puedes modificarlo según tus necesidades)
-    languagetoggle('es');
-});

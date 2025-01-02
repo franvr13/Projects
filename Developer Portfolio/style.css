@@ -367,7 +367,7 @@ span {
 
 @keyframes cursor {
     to {
-        border-left: 3px solid var(--main-color);
+        border-left: 3px solid var(--text-color);
     }
 }
 
@@ -379,14 +379,18 @@ span {
     81%, 100% { content: 'Graphic Designer'; }
 }
 
+@keyframes words_es {
+    0%, 20% { content: 'Desarrollador Junior'; }
+    21%, 40% { content: 'Desarrollador Java'; }
+    41%, 60% { content: 'Desarrollador Web'; }
+    61%, 80% { content: 'Full Stack Developer'; }
+    81%, 100% { content: 'Diseñador Gráfico'; }
+}
+
 .developer-title {
     font-size: 24px;
     font-weight: bold;
     animation: words 5s infinite; /* Predeterminado en inglés */
-}
-
-.developer-title.en {
-    animation: words 5s infinite;
 }
 
 .developer-title.es {
