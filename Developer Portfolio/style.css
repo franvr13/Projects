@@ -138,27 +138,40 @@ html::-webkit-scrollbar-thumb {
     transform: scale(1.1);
 }
 
-.language-toggle {
+.languagetoggle {
+    order: 1; /* Coloca el botón a la izquierda */
+    margin-right: 10px; /* Ajusta el margen según sea necesario */
     padding: 0.5rem 1rem;
     background-color: var(--main-color);
     color: var(--text-color);
     border-radius: 5px;
     font-size: 1.5rem;
     cursor: pointer;
-    margin-left: auto;
-    margin-right: 2.5rem;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.language-toggle:hover {
+.languagetoggle:hover {
     background-color: var(--text-color);
     color: var(--main-color);
 }
 
 @media (max-width: 995px) {
-    .language-toggle {
+    .languagetoggle {
         margin-right: 1rem;
         font-size: 1.4rem;
+        margin-left: 0; 
+        order: -1; 
+    }
+
+    .menu-icon {
+        display: block;
+        margin-left: 1rem; 
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 }
 
@@ -178,10 +191,13 @@ html::-webkit-scrollbar-thumb {
 }
 
 .menu-icon {
+    order: 2; /* Coloca el botón del menú a la derecha del botón de cambio de idioma */
+    margin-left: 10px; /* Ajusta el margen según sea necesario */
     font-size: 3.6rem;
     color: var(--main-color);
     background-color: var(--bg-color);
-    display: none;
+    display: none; /* Oculta el botón en pantallas grandes */
+    cursor: pointer;
 }
 
 @media (max-width: 995px) {
@@ -200,6 +216,7 @@ html::-webkit-scrollbar-thumb {
         padding: 1rem 3%;
         background-color: var(--second-bg-color);
         display: none;
+        order: 2;
     }
 
     .navbar.active {

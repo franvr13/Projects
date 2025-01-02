@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
     const video = document.querySelector('video');
     const typingElement = document.getElementById("typing-effect");
-    const languageToggle = document.getElementById('language-toggle');
+    const languageToggle = document.getElementById('languagetoggle');
     const cookieConsent = document.getElementById('cookieConsent');
     const acceptCookies = document.getElementById('acceptCookies');
     const rejectCookies = document.getElementById('rejectCookies');
@@ -170,7 +170,7 @@ function languagetoggle(lang) {
 }
 
 // Evento para el botón de traducción
-document.getElementById('language-toggle').addEventListener('click', function() {
+document.getElementById('languagetoggle').addEventListener('click', function() {
     // Cambia el idioma al español (puedes modificarlo según tus necesidades)
     languagetoggle('es');
 });
