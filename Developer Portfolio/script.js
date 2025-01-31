@@ -150,3 +150,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Funcionalidad: Descargar CV
+function downloadCV() {
+    const link = document.createElement('a');
+    link.href = '/cv/CV-Francisco-Villalba-Roldán.pdf';
+    link.download = 'CV-Francisco-Villalba-Roldán.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
