@@ -11,7 +11,7 @@
   "iAm": "Soy",
   "name": "Fran",
   "developer": "Desarrollador Java",
-  "description": "Actualmente, soy un desarrollador Java con experiencia en tecnologías clave como Spring, Bootstrap, Hibernate y Scrum, entre otras. Mi enfoque está en crear soluciones robustas y eficientes, siempre con un ojo en la innovación y la calidad del código.",
+  "description": "Apasionado por la programación y la resolución de problemas, con experiencia en desarrollo web y de aplicaciones. Me enfoco en crear soluciones innovadoras, eficientes y escalables con código limpio y estructurado. Destaco por mi aprendizaje rápido, mentalidad analítica y capacidad para trabajar en equipo, siempre buscando desafíos que impulsen mi crecimiento y aporten valor.",
   "myEducation": "Mis Estudios",
   "education1": "Master Java Desarrollo Web/App",
   "description1": "El Máster en Java ofrece los conocimientos y habilidades necesarias para formarse como desarrollador de aplicaciones de escritorioy web con Java, en un contexto de transformación digital. El temario cubre desde los fundamentos hasta el nivel avanzado de Java, incluyendo conexión a bases de datos y desarrollo web con tecnologías como Servlets, JSP, HTML, CSS, JavaScript (incluyendo HTML5 y CSS3). El curso prepara a los alumnos para obtener certificaciones en Java y aplicar lo aprendido en proyectos reales.",
@@ -29,5 +29,6 @@
   "copyright": "© Francisco Villalba Roldán | Todos los derechos reservados.",
   "accept": "Aceptar",
   "reject": "Rechazar",
-  "cookies": "Utilizamos cookies para mejorar su experiencia. Aceptas el uso de cookies?"
+  "cookies": "Utilizamos cookies para mejorar su experiencia. Aceptas el uso de cookies?",
+  "download_cv": "Descargar CV"
 }

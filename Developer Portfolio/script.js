@@ -152,11 +152,30 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Funcionalidad: Descargar CV
-function downloadCV() {
-    const link = document.createElement('a');
-    link.href = '/cv/CV-Francisco-Villalba-Roldán.pdf';
-    link.download = 'CV-Francisco-Villalba-Roldán.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-}
+document.addEventListener('DOMContentLoaded', function () {
+    const downloadButton = document.querySelector('.fixed-btn');
+    const languageToggle = document.getElementById('languagetoggle');
+    let currentLang = 'en'; // Idioma predeterminado
+
+    // Función para actualizar el enlace de descarga según el idioma
+    function updateDownloadLink() {
+        if (currentLang === 'es') {
+            downloadButton.href = 'CV Español.pdf';
+        } else {
+            downloadButton.href = 'CV Inglés.pdf';
+        }
+    }
+
+    // Actualiza el enlace de descarga al cargar la página
+    updateDownloadLink();
+
+    // Cambia el idioma y actualiza el enlace de descarga al hacer clic en el botón de cambio de idioma
+    languageToggle.addEventListener('click', function () {
+        if (currentLang === 'en') {
+            currentLang = 'es';
+        } else {
+            currentLang = 'en';
+        }
+        updateDownloadLink();
+    });
+});
