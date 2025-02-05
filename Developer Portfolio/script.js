@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
     const video = document.querySelector('video');
     const typingElement = document.getElementById("typing-effect");
-    const languageToggle = document.getElementById('languagetoggle');
+    const languageToggle = document.getElementById('btn-languagetoggle');
     const cookieConsent = document.getElementById('cookieConsent');
     const acceptCookies = document.getElementById('acceptCookies');
     const rejectCookies = document.getElementById('rejectCookies');
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Funcionalidad: Descargar CV
 document.addEventListener('DOMContentLoaded', function () {
     const downloadButton = document.querySelector('.fixed-btn');
-    const languageToggle = document.getElementById('languagetoggle');
+    const languageToggle = document.getElementById('btn-languagetoggle');
     let currentLang = 'en'; // Idioma predeterminado
 
     // Función para actualizar el enlace de descarga según el idioma
