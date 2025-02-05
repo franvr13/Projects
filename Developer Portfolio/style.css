@@ -374,46 +374,23 @@ span {
 @keyframes words {
   0%,
   20% {
-    content: "Junior Developer";
+    content: "Developer";
   }
   21%,
   40% {
-    content: "Java Developer";
-  }
-  41%,
-  60% {
     content: "Web Developer";
   }
-  61%,
-  80% {
-    content: "Full Stack Developer";
-  }
-  81%,
-  100% {
-    content: "Graphic Designer";
-  }
-}
-
-@keyframes words_es {
-  0%,
-  20% {
-    content: "Desarrollador Junior";
-  }
-  21%,
-  40% {
-    content: "Desarrollador Java";
-  }
   41%,
   60% {
-    content: "Desarrollador Web";
+    content: "Frontend Developer";
   }
   61%,
   80% {
-    content: "Full Stack Developer";
+    content: "Backend Developer";
   }
   81%,
   100% {
-    content: "Diseñador Gráfico";
+    content: "Full Stack Developer";
   }
 }
 
@@ -650,8 +627,19 @@ span {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  margin-top: 1rem;
+}
+
+.skills .bar .info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.skills .bar .info img {
+  width: 100%;
+  height: 100%;
 }
 
 .skills .container .bar .info span {
